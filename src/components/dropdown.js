@@ -40,12 +40,13 @@ const Dropdown = () => {
             >
               Dropdown
             </button>
+            
             <div
               ref={popoverDropdownRef}
               className={
                 (dropdownPopoverShow ? "block " : "hidden ") +
                  
-                " text-base mt-5 z-50  absolute py-2 list-none text-left rounded shadow-lg shadow-indigo-500/40 "
+                " text-base  z-50  absolute py-2 list-none text-left rounded shadow-lg shadow-indigo-500/40  bg-orange-300"
               }
               style={{ minWidth: "12rem"}}
             >
@@ -65,7 +66,7 @@ const Dropdown = () => {
                       briefcount="3"
                     />
                   </a>
-                  <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
+                  <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
                   <a
                     href="#pablo"
                     className={
@@ -80,7 +81,7 @@ const Dropdown = () => {
                       briefcount="3"
                     />
                   </a>
-                  <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
+                  <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
                   <a
                     href="#pablo"
                     className={
@@ -95,7 +96,7 @@ const Dropdown = () => {
                       briefcount="3"
                     />
                   </a>
-                  <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
+                  <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
                   <a
                     href="#pablo"
                     className={
@@ -110,7 +111,7 @@ const Dropdown = () => {
                       briefcount="3"
                     />
                   </a>
-                  <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
+                  <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
                 </div>
                 <div>
                   <a
@@ -127,7 +128,7 @@ const Dropdown = () => {
                       briefcount="3"
                     />
                   </a>
-                  <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
+                  <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
                   <a
                     href="#pablo"
                     className={
@@ -142,7 +143,7 @@ const Dropdown = () => {
                       briefcount="5"
                     />
                   </a>
-                  <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
+                  <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
                   <a
                     href="#pablo"
                     className={
@@ -157,7 +158,7 @@ const Dropdown = () => {
                       briefcount="6"
                     />
                   </a>
-                  <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
+                  <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
                   <a
                     href="#pablo"
                     className={
@@ -172,7 +173,7 @@ const Dropdown = () => {
                       briefcount="16"
                     />
                   </a>
-                  <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
+                  <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
                 </div>
               </div>
             </div>
