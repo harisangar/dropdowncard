@@ -1,7 +1,8 @@
 import React from 'react'
 
-import user from "../images/user.png";
-import brief from "../images/brief.png";
+
+// import user from "/images/user.png";
+// import brief from "/images/brief.png";
 
 
 function Content(props) {
@@ -12,7 +13,7 @@ function Content(props) {
       <div className='flex flex-col text-start items-start'>
         <p>{props.text}</p>
         <div className='flex flex-row '>
-        <img className="w-3 h-3 mr-2"src={user}/><span>X{props.usercount}</span><img className="w-3 h-3 mx-2"src={brief}/><span className='pr-2'>X{props.briefcount}</span>
+        <img className="w-3 h-3 mr-2"src="/images/user.png"/><span>X{props.usercount}</span><img className="w-3 h-3 mx-2"src="/images/brief.png"/><span className='pr-2'>X{props.briefcount}</span>
         </div>
       </div>
     </div>
