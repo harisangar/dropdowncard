@@ -5,18 +5,22 @@ import React from 'react'
 // import brief from "/images/brief.png";
 
 
-function Content(props) {
+const Content=({usercount,vehicle,text,briefcount})=> {
+  
   return (
-    <div className='flex flex-row '>
-      <img className="w-6 h-6 pl-1 mr-3"src={props.vehicle} alt="car"/>
+    
+    
+    <div className='flex flex-row ' >
+      <img className="w-6 h-6 pl-1 mr-3"src={vehicle} alt="car"/>
      
       <div className='flex flex-col text-start items-start'>
-        <p>{props.text}</p>
+        <p>{text}</p>
         <div className='flex flex-row '>
-        <img className="w-3 h-3 mr-2"src="/images/user.png"/><span>X{props.usercount}</span><img className="w-3 h-3 mx-2"src="/images/brief.png"/><span className='pr-2'>X{props.briefcount}</span>
+        <img className="w-3 h-3 mr-2"src="/images/user.png"/><span>X{usercount}</span><img className="w-3 h-3 mx-2"src="/images/brief.png"/><span className='pr-2'>X{briefcount}</span>
         </div>
       </div>
     </div>
+  
   )
 }
 

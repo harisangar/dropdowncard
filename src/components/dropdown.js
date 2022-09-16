@@ -1,19 +1,30 @@
-import React, { useState, createRef } from "react";
+import React, { useState, createRef, useEffect} from "react";
 import { createPopper } from "@popperjs/core";
 import Button from "./Button";
 
 import { Data } from "./Data";
 
 const Dropdown = () => {
+ 
   // dropdown props
+  const [value,setValue]=useState("Dropdown");
+  const changetext=(val)=>{
+    setValue(val);
+    
+    
+  }
+//   useEffect(()=>{
+// console.log("pressed")
+//   },[value]);
+ 
 
   const [dropdownPopoverShow, setDropdownPopoverShow] = useState(false);
-  const [isodd,setIsodd]=useState(false);
+  
 
   const btnDropdownRef = createRef();
   const popoverDropdownRef = createRef();
   const len= Data.length/2;
-  const lengtofdata= Data.length;
+  // const lengtofdata= Data.length;
   // const calcdata=()=>{
   //   if(Data.length/2 === 1 ){
   //     data=Data[Data.length-1];
@@ -46,7 +57,7 @@ const Dropdown = () => {
               : openDropdownPopover();
           }}
         >
-          Dropdown
+       {value}
         </button>
 
         <div
@@ -62,6 +73,7 @@ const Dropdown = () => {
               
               {Data.map((data,index)=>{
                 
+                
                 if (index<=(len-1)) {
                   return  <div><a
                   href="#pablo"
@@ -70,13 +82,15 @@ const Dropdown = () => {
                   }
                   onClick={(e) => e.preventDefault()}
                 >
-                  <Button
+                  <Button key={index}
+                  buttonclicked={changetext}
+                   
                     text={data.text}
                     vehicle={data.vehicle}
                     
                     usercount={data.usercount}
                     briefcount={data.briefcount}
-                    {...console.log(data.vehicle)}
+                   
                   />
                 </a>
                 <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
@@ -97,6 +111,7 @@ const Dropdown = () => {
                   onClick={(e) => e.preventDefault()}
                 >
                   <Button
+                  buttonclicked={changetext}
                     text={data.text}
                     vehicle={data.vehicle}
                     usercount={data.usercount}
