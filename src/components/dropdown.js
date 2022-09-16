@@ -1,4 +1,4 @@
-import React, { useState, createRef, useEffect} from "react";
+import React, { useState, createRef, useEffect,useRef} from "react";
 import { createPopper } from "@popperjs/core";
 import Button from "./Button";
 
@@ -13,10 +13,15 @@ const Dropdown = () => {
     
     
   }
-//   useEffect(()=>{
-// console.log("pressed")
-//   },[value]);
- 
+  const concernedElement = document.querySelector(".dropdownbox");
+
+  document.addEventListener("mousedown", (event) => {
+    if (concernedElement.contains(event.target)) {
+      console.log("Clicked Inside");
+    } else {
+      closeDropdownPopover();
+    }
+  });
 
   const [dropdownPopoverShow, setDropdownPopoverShow] = useState(false);
   
@@ -65,7 +70,7 @@ const Dropdown = () => {
           ref={popoverDropdownRef}
           className={
             (dropdownPopoverShow ? "block " : "hidden ") +
-            " text-base  z-50  absolute py-2 list-none text-left rounded shadow-lg shadow-indigo-500/40  bg-orange-300"
+            " dropdownbox text-base  z-50  absolute py-2 list-none text-left rounded shadow-lg shadow-indigo-500/40  bg-gray-500"
           }
           style={{ minWidth: "12rem" }}
         >
@@ -76,7 +81,12 @@ const Dropdown = () => {
                 
                 
                 if (index<=(len-1)) {
-                  return  <div><a
+                  return  <div  onClick={() => {
+                    dropdownPopoverShow
+                      ? closeDropdownPopover()
+                      : openDropdownPopover();
+                  }}><a
+                  
                   href="#pablo"
                   className={
                     "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-900 "
@@ -85,6 +95,7 @@ const Dropdown = () => {
                 >
                   <Button key={index}
                   buttonclicked={changetext}
+                 
                    
                     text={data.text}
                     vehicle={data.vehicle}
@@ -94,14 +105,18 @@ const Dropdown = () => {
                    
                   />
                 </a>
-                <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
+                <div className="h-0 my-2 border border-solid border-t-0 border-gray-900 opacity-25" />
                 
                 </div>
                 
                 }
               })}
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col"  onClick={() => {
+                    dropdownPopoverShow
+                      ? closeDropdownPopover()
+                      : openDropdownPopover();
+                  }}>
             {Data.map((data,index)=>{
                 if (index>(len-1)) {
                   return  <div><a
@@ -119,7 +134,7 @@ const Dropdown = () => {
                     briefcount={data.briefcount}
                   />
                 </a>
-                <div className="h-0 my-2 border border-solid border-t-0 border-[#ff6900] opacity-25" />
+                <div className="h-0 my-2 border border-solid border-t-0 border-gray-900 opacity-25" />
                 </div>
                 }
               })}
